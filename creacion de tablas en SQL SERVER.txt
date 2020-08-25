@@ -1,0 +1,38 @@
+Create database BDFARMACIAS
+use database BDFARMACIAS
+/*==============================================================*/
+/* Table: CLIENTE                                               */
+/*==============================================================*/
+create table CLIENTE (
+   CLIENTE_ID           int                  not null,
+   CLIENTENOMBRE        varchar(20)          null,
+   CLIENTEAPELLIDOS     varchar(20)          null,
+   CLIENTECEDULA        varchar(10)          null,
+   CLIENTECELULAR       varchar(10)          null,
+   constraint PK_CLIENTE primary key (CLIENTE_ID)
+)
+go
+
+/*==============================================================*/
+/* Table: PRODUCTO                                              */
+/*==============================================================*/
+create table PRODUCTO (
+   CLIENTE_ID           int                  not null,
+   PROVEEDOR_ID         int                  not null,
+   PRODUCTONOMBRE       varchar(20)          null,
+   constraint PK_PRODUCTO primary key (CLIENTE_ID, PROVEEDOR_ID)
+)
+go
+
+/*==============================================================*/
+/* Table: PROVEEDOR                                             */
+/*==============================================================*/
+create table PROVEEDOR (
+   PROVEEDOR_ID         int                  not null,
+   PROVEEDORNOMBRE      varchar(20)          null,
+   PROVEEDORCORREO      varchar(35)          null,
+   PROVEEDORCELULAR     varchar(10)          null,
+   constraint PK_PROVEEDOR primary key (PROVEEDOR_ID)
+)
+go
+
